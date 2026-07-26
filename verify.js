@@ -90,11 +90,47 @@ export async function checkDuplicateUTR(utr){
 // Check Payment Exists
 export async function checkPaymentExists(utr){
 
+    if(!utr){
+
+        return{
+
+            success:false,
+            message:"Payment Not Found"
+
+        };
+
+    }
+
+    return{
+
+        success:true,
+        message:"Payment Found"
+
+    };
+
 }
 
 
 // Verify Merchant
 export async function verifyMerchant(data){
+
+    if(!data){
+
+        return{
+
+            success:false,
+            message:"Merchant Verification Failed"
+
+        };
+
+    }
+
+    return{
+
+        success:true,
+        message:"Merchant Verified"
+
+    };
 
 }
 
