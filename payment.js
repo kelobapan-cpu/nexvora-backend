@@ -229,3 +229,21 @@ export async function saveTransactionHistory(
     };
 
 }
+
+// Generate Payment Response
+
+export async function generatePaymentResponse(
+
+    success,
+    message
+
+){
+
+    return{
+
+        success,
+        message
+
+    };
+
+}
