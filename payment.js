@@ -154,3 +154,78 @@ export async function updateWalletBalance(
     };
 
 }
+
+// Create Transaction
+
+export async function createTransaction(
+
+    transactionID,
+    amount,
+    walletBalance
+
+){
+
+    if(
+
+        !transactionID ||
+
+        !amount ||
+
+        walletBalance === undefined
+
+    ){
+
+        return{
+
+            success:false,
+            message:"Transaction Creation Failed"
+
+        };
+
+    }
+
+    return{
+
+        success:true,
+
+        transaction:{
+
+            transactionID,
+
+            amount,
+
+            walletBalance
+
+        }
+
+    };
+
+}
+
+// Save Transaction History
+
+export async function saveTransactionHistory(
+
+    transaction
+
+){
+
+    if(!transaction){
+
+        return{
+
+            success:false,
+            message:"Transaction Save Failed"
+
+        };
+
+    }
+
+    return{
+
+        success:true,
+        message:"Transaction Saved"
+
+    };
+
+}
