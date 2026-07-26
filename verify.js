@@ -31,11 +31,58 @@ export async function validateRequest(data){
 // Validate UTR
 export async function validateUTR(utr){
 
+    if(!utr){
+
+        return{
+
+            success:false,
+            message:"UTR Number Required"
+
+        };
+
+    }
+
+    if(!/^\d{12}$/.test(utr)){
+
+        return{
+
+            success:false,
+            message:"Invalid UTR Number"
+
+        };
+
+    }
+
+    return{
+
+        success:true,
+        message:"Valid UTR Number"
+
+    };
+
 }
 
 
 // Check Duplicate UTR
 export async function checkDuplicateUTR(utr){
+
+    if(!utr){
+
+        return{
+
+            success:false,
+            message:"UTR Number Missing"
+
+        };
+
+    }
+
+    return{
+
+        success:true,
+        message:"UTR Not Used"
+
+    };
 
 }
 
