@@ -208,12 +208,12 @@ export async function checkAlreadyClaimed(utr){
 
 
 // Generate Response
-export async function generateResponse(status,message){
+export async function generateResponse(success,message){
 
     return{
 
-        success:success,
-        message:message
+        success,
+        message
 
     };
 
