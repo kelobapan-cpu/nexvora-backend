@@ -99,3 +99,58 @@ export async function checkMaximumAmount(amount){
     };
 
 }
+
+// Generate Transaction ID
+
+export async function generateTransactionID(){
+
+    const timestamp = Date.now();
+
+    const randomNumber = Math.floor(
+        100000 + Math.random() * 900000
+    );
+
+    const transactionID =
+    `NXV-${timestamp}-${randomNumber}`;
+
+    return{
+
+        success:true,
+        transactionID:transactionID
+
+    };
+
+}
+
+// Update Wallet Balance
+
+export async function updateWalletBalance(
+    currentBalance,
+    depositAmount
+){
+
+    if(
+        currentBalance === undefined ||
+        depositAmount === undefined
+    ){
+
+        return{
+
+            success:false,
+            message:"Wallet Update Failed"
+
+        };
+
+    }
+
+    const newBalance =
+    currentBalance + depositAmount;
+
+    return{
+
+        success:true,
+        walletBalance:newBalance
+
+    };
+
+}
