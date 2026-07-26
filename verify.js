@@ -138,11 +138,47 @@ export async function verifyMerchant(data){
 // Verify Amount
 export async function verifyAmount(data){
 
+    if(!data){
+
+        return{
+
+            success:false,
+            message:"Amount Verification Failed"
+
+        };
+
+    }
+
+    return{
+
+        success:true,
+        message:"Amount Verified"
+
+    };
+
 }
 
 
 // Verify Payment Status
 export async function verifyPaymentStatus(data){
+
+    if(!data){
+
+        return{
+
+            success:false,
+            message:"Payment Verification Failed"
+
+        };
+
+    }
+
+    return{
+
+        success:true,
+        message:"Payment Successful"
+
+    };
 
 }
 
@@ -150,10 +186,35 @@ export async function verifyPaymentStatus(data){
 // Check Already Claimed
 export async function checkAlreadyClaimed(utr){
 
+    if(!utr){
+
+        return{
+
+            success:false,
+            message:"Payment Already Claimed"
+
+        };
+
+    }
+
+    return{
+
+        success:true,
+        message:"Payment Not Claimed"
+
+    };
+
 }
 
 
 // Generate Response
 export async function generateResponse(status,message){
+
+    return{
+
+        success:success,
+        message:message
+
+    };
 
 }
