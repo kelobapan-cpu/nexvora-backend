@@ -26,3 +26,27 @@ export async function validateWebhook(data){
     };
 
 }
+
+// Validate Merchant
+
+export async function validateMerchant(data){
+
+    if(!data){
+
+        return{
+
+            success:false,
+            message:"Merchant Verification Failed"
+
+        };
+
+    }
+
+    return{
+
+        success:true,
+        message:"Merchant Verified"
+
+    };
+
+}
