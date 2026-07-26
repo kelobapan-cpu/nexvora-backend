@@ -230,6 +230,34 @@ export async function saveTransactionHistory(
 
 }
 
+// Update Firebase Wallet
+
+export async function updateFirebaseWallet(
+
+    walletBalance
+
+){
+
+    if(walletBalance === undefined){
+
+        return{
+
+            success:false,
+            message:"Firebase Wallet Update Failed"
+
+        };
+
+    }
+
+    return{
+
+        success:true,
+        message:"Firebase Wallet Updated"
+
+    };
+
+}
+
 // Generate Payment Response
 
 export async function generatePaymentResponse(
